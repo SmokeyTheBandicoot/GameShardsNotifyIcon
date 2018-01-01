@@ -126,6 +126,7 @@ This lightweight application provides a way to check if CAPS lock, Block Num and
 Some keyboards (especially in notebooks and laptops do not have a LED indicating if those are active or not
 
 GS Icon Notifier solves that by adding 3 small icons in the task bar (movable to main application bar), so you can look at your screen instead of your keyboard to check if they are active.
+The app will update the icons once every second, taking just a very tiny part of your CPU processing (&lt; 0.01%). 
 
 Visit GitHub for code, Facebook and GameShardsSoftware website for more!</value>
   </data>

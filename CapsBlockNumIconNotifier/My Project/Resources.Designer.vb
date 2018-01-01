@@ -63,10 +63,100 @@ Namespace My.Resources
         '''<summary>
         '''  Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
         '''</summary>
-        Friend ReadOnly Property Icon_CAPS_on() As System.Drawing.Icon
+        Friend ReadOnly Property C_OFF() As System.Drawing.Icon
             Get
-                Dim obj As Object = ResourceManager.GetObject("Icon_CAPS_on", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("C_OFF", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
+        '''</summary>
+        Friend ReadOnly Property C_ON() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("C_ON", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Facebook() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Facebook", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property GitHub() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("GitHub", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
+        '''</summary>
+        Friend ReadOnly Property NOFF() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("NOFF", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
+        '''</summary>
+        Friend ReadOnly Property NON() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("NON", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Render_logo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Render logo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
+        '''</summary>
+        Friend ReadOnly Property SOFF() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SOFF", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
+        '''</summary>
+        Friend ReadOnly Property SON() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("SON", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Twitter() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Twitter", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
     End Module

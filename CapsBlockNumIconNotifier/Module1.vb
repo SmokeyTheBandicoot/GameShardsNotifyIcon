@@ -6,58 +6,152 @@ Imports System.Windows.Forms
 
 Public Module Module1
 
-    Private mobNotifyIcon As NotifyIcon
-    Private WithEvents mobContextMenu As ContextMenu
+    Private WithEvents CAPSCM As New ContextMenu
+    Private WithEvents SCRLKCM As New ContextMenu
+    Private WithEvents NUMLKCM As New ContextMenu
 
-    Dim CAPSIcon As NotifyIcon
-    Dim SCRLKIcon As NotifyIcon
-    Dim NUMLKIcon As NotifyIcon
+    Dim CAPSIcon As New NotifyIcon
+    Dim SCRLKIcon As New NotifyIcon
+    Dim NUMLKIcon As New NotifyIcon
+
+    Dim WithEvents t As New Timer
+
+    Public HideOff_caps As Boolean = True
+    Public HideOff_screen As Boolean = True
+    Public HideOff_num As Boolean = True
+
+    Dim W As New About
 
     Private Sub CreateMenu()
+
         Try
-            mobContextMenu.MenuItems.Add(New MenuItem("Toggle CAPS", New EventHandler(AddressOf ToggleCAPS)))
+            CAPSCM.MenuItems.Add(New MenuItem("Settings", New EventHandler(AddressOf AboutBox)))
 
-            mobContextMenu.MenuItems.Add(New MenuItem("Toggle BlockNum", New EventHandler(AddressOf ToggleBlockNum)))
+            CAPSCM.MenuItems.Add(New MenuItem("Exit", New EventHandler(AddressOf ExitApp)))
 
-            mobContextMenu.MenuItems.Add(New MenuItem("Toggle ScreenLock", New EventHandler(AddressOf ToggleScreenLock)))
 
-            mobContextMenu.MenuItems.Add("-")
 
-            mobContextMenu.MenuItems.Add(New MenuItem("About", New EventHandler(AddressOf AboutBox)))
+        Catch obEx As Exception
+            Throw obEx
+        End Try
 
-            mobContextMenu.MenuItems.Add(New MenuItem("Exit", New EventHandler(AddressOf ExitApp)))
+
+        Try
+            NUMLKCM.MenuItems.Add(New MenuItem("Settings", New EventHandler(AddressOf AboutBox)))
+
+            NUMLKCM.MenuItems.Add(New MenuItem("Exit", New EventHandler(AddressOf ExitApp)))
+
+        Catch obEx As Exception
+            Throw obEx
+        End Try
+
+
+        Try
+            SCRLKCM.MenuItems.Add(New MenuItem("Settings", New EventHandler(AddressOf AboutBox)))
+
+            SCRLKCM.MenuItems.Add(New MenuItem("Exit", New EventHandler(AddressOf ExitApp)))
 
         Catch obEx As Exception
             Throw obEx
         End Try
     End Sub
 
-    Public Sub ToggleCAPS()
-
-    End Sub
-
-    Public Sub ToggleBlockNUM()
-
-    End Sub
-
-    Public Sub ToggleScreenLock()
-
-    End Sub
-
     Public Sub AboutBox()
-
+        W = New About
+        W.Show()
     End Sub
 
     Public Sub ExitApp()
+        Application.DoEvents()
+        Application.Exit()
+        End
+    End Sub
 
+    Public Sub ToggleHideWhenOffCaps()
+        HideOff_caps = True
+    End Sub
+
+    Public Sub ToggleHideWhenOffScreen()
+        HideOff_screen = True
+    End Sub
+
+    Public Sub ToggleHideWhenOffNum()
+        HideOff_num = True
     End Sub
 
     Sub Main()
+
         CreateMenu()
 
-        With CAPSIcon
-            .Icon =
+        CAPSIcon.ContextMenu = CAPSCM
+        SCRLKIcon.ContextMenu = SCRLKCM
+        NUMLKIcon.ContextMenu = NUMLKCM
+
+        With t
+            .Interval = 1000
+            .Start()
         End With
+
+        Do
+            Application.DoEvents()
+        Loop
+
+    End Sub
+
+    Private Sub TimerTick(sender As Object, e As EventArgs) Handles t.Tick
+
+        HideOff_caps = W.CheckBox1.Checked
+        HideOff_screen = W.CheckBox2.Checked
+        HideOff_num = W.CheckBox3.Checked
+
+        With CAPSIcon
+            If My.Computer.Keyboard.CapsLock Then
+                .Icon = My.Resources.C_ON
+                .Visible = True
+            Else
+                .Icon = My.Resources.C_OFF
+                If HideOff_caps Then
+                    .Visible = False
+                Else
+                    .Visible = True
+                End If
+
+            End If
+        End With
+
+
+        With SCRLKIcon
+            If My.Computer.Keyboard.ScrollLock Then
+                .Icon = My.Resources.SON
+                .Visible = True
+            Else
+                .Icon = My.Resources.SOFF
+                If HideOff_screen Then
+                    .Visible = False
+                Else
+                    .Visible = True
+                End If
+
+            End If
+        End With
+
+
+        With NUMLKIcon
+            If My.Computer.Keyboard.NumLock Then
+                .Icon = My.Resources.NON
+                .Visible = True
+            Else
+                .Icon = My.Resources.NOFF
+                If HideOff_num Then
+                    .Visible = False
+                Else
+                    .Visible = True
+                End If
+
+            End If
+        End With
+
+
     End Sub
 
 End Module

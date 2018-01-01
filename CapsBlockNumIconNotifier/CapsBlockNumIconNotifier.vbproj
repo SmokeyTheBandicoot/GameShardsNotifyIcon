@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{68464F6A-605F-4F1A-A84E-7B8495D06D57}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <StartupObject>CapsBlockNumIconNotifier.Module1</StartupObject>
     <RootNamespace>CapsBlockNumIconNotifier</RootNamespace>
     <AssemblyName>CapsBlockNumIconNotifier</AssemblyName>
@@ -119,6 +119,80 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icon_CAPS_on.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_CAPS_off.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_Screen_on.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_Screen_off.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_NUM_on.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_NUM_off.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_CAPS_off.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_CAPS_on.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_NUM_off.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_NUM_on.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_SCR_off.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_SCR_on.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C_OFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\C_ON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SOFF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SON.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Render logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GitHub.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
