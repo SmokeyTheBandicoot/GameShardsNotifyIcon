@@ -70,7 +70,7 @@ Public Class About
 
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        Diagnostics.Process.Start("")
+        Diagnostics.Process.Start("https://github.com/SmokeyTheBandicoot/GameShardsNotifyIcon")
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
