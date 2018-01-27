@@ -29,6 +29,11 @@ Public Class About
         My.Settings.Save()
     End Sub
 
+    Private Sub CheckedChange(sender As Object, e As eventargs) Handles CheckBox1.checkedchanged, checkbox2.checkedchanged, checkbox3.checkedchanged
+        HideOff_caps = W.CheckBox1.Checked
+        HideOff_screen = W.CheckBox2.Checked
+        HideOff_num = W.CheckBox3.Checked
+    End Sub
 
     Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
 

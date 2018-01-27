@@ -1,6 +1,8 @@
 ﻿Imports System.Diagnostics
 Imports System.Text
 Imports System.Windows.Forms
+Imports System.Reflection
+Imports System.IO
 
 
 
@@ -20,7 +22,7 @@ Public Module Module1
     Public HideOff_screen As Boolean = True
     Public HideOff_num As Boolean = True
 
-    Dim W As New About
+    public W As New About
 
     Private Sub CreateMenu()
 
@@ -81,6 +83,12 @@ Public Module Module1
 
     Sub Main()
 
+        'Dim b() As Byte = My.Resources.Interop_IWshRuntimeLibrary
+
+        'If Not IO.File.Exists([Assembly].GetExecutingAssembly().Location & "\Interop.IWshRuntimeLibrary.dll") Then
+        '    My.Computer.FileSystem.WriteAllBytes([Assembly].GetExecutingAssembly().Location & "\Interop.IWshRuntimeLibrary.dll", b, False)
+        'End If
+
         CreateMenu()
 
         CAPSIcon.ContextMenu = CAPSCM
@@ -88,7 +96,7 @@ Public Module Module1
         NUMLKIcon.ContextMenu = NUMLKCM
 
         With t
-            .Interval = 1000
+            .Interval = 2000
             .Start()
         End With
 
@@ -99,10 +107,6 @@ Public Module Module1
     End Sub
 
     Private Sub TimerTick(sender As Object, e As EventArgs) Handles t.Tick
-
-        HideOff_caps = W.CheckBox1.Checked
-        HideOff_screen = W.CheckBox2.Checked
-        HideOff_num = W.CheckBox3.Checked
 
         With CAPSIcon
             If My.Computer.Keyboard.CapsLock Then
